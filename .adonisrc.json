@@ -4,17 +4,33 @@
     "./commands",
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
-    "@adonisjs/lucid/build/commands"
+    "@adonisjs/lucid/build/commands",
+    "adonisjs-scheduler/build/commands",
+    "adonis-sail/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
     "App": "app",
     "Config": "config",
     "Database": "database",
-    "Contracts": "contracts"
+    "Contracts": "contracts",
+    "Commands": "commands"
   },
-  "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider", "@adonisjs/core", "@adonisjs/lucid", "@adonisjs/auth"],
+  "preloads": [
+    "./start/routes",
+    "./start/kernel",
+    {
+      "file": "./start/scheduler",
+      "environment": ["console"]
+    }
+  ],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/lucid",
+    "@adonisjs/auth",
+    "adonisjs-scheduler"
+  ],
   "aceProviders": ["@adonisjs/repl"],
   "tests": {
     "suites": [

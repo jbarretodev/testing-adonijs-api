@@ -539,7 +539,47 @@
           "description": "Drop all custom types (Postgres only)"
         }
       ]
+    },
+    "inspire": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "adonisjs-scheduler/build/commands/InspireCommand",
+      "commandName": "inspire",
+      "description": "",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "scheduler:run": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": true
+      },
+      "commandPath": "adonisjs-scheduler/build/commands/SchedulerCommand",
+      "commandName": "scheduler:run",
+      "description": "",
+      "args": [],
+      "aliases": ["scheduler:work", "schedule:work", "schedule:run"],
+      "flags": []
+    },
+    "sail:install": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "adonis-sail/build/commands/InstallSail",
+      "commandName": "sail:install",
+      "description": "Install Adonis Sail and generate Docker Compose file",
+      "args": [],
+      "aliases": [],
+      "flags": []
     }
   },
-  "aliases": {}
+  "aliases": {
+    "scheduler:work": "scheduler:run",
+    "schedule:work": "scheduler:run",
+    "schedule:run": "scheduler:run"
+  }
 }
