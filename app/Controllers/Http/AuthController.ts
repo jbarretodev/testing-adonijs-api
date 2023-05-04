@@ -5,8 +5,8 @@ import UserRepository from 'App/repositories/UserRepository'
 export default class AuthController {
   public async authentication({ request, response, auth }: HttpContextContract) {
     try {
-      const email = request.input('email')
-      const password = request.input('password')
+      const email:string = request.input('email')
+      const password:string  = request.input('password')
 
       await auth.use('api').verifyCredentials(email, password)
 
